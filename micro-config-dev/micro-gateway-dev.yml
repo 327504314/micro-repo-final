@@ -39,8 +39,3 @@ security:
 management:
   security:
     enabled: false
-spring:
-  boot:
-    admin:
-      username: admin
-      password: admin
