@@ -1,9 +1,9 @@
 security:
   basic:
     enabled: false
-  user:
-    name: admin
-    password: admin
+  #user:
+    #name: admin
+    #password: admin
 management:
   security:
     enabled: false
