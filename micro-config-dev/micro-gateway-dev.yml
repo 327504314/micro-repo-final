@@ -30,3 +30,9 @@ ribbon:
   OkToRetryOnAllOperations: false
   ConnectTimeout: 60000
   ReadTimeout: 60000
+security:
+  basic:
+    enabled: true
+  user:
+    name: admin
+    password: admin
