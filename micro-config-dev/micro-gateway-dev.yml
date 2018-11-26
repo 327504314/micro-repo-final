@@ -2,7 +2,6 @@ zuul:
   host:
     socket-timeout-millis: 60000
     connect-timeout-millis: 120000
-    max-total-connections:
   #forceOriginalQueryStringEncoding: true
   #add-proxy-headers: true
   #add-host-header: true
