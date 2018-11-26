@@ -19,3 +19,5 @@ spring:
         location: turbine
       routes:
         endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,heapdump,loggers,auditevents,hystrix.stream,activiti
+      username: admin
+      password: admin
