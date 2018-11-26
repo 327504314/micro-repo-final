@@ -36,3 +36,6 @@ security:
   user:
     name: admin
     password: admin
+management:
+  security:
+    enabled: false
