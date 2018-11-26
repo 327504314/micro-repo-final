@@ -1,0 +1,32 @@
+zuul:
+  host:
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 120000
+    max-total-connections:
+  #forceOriginalQueryStringEncoding: true
+  #add-proxy-headers: true
+  #add-host-header: true
+  routes:
+    sample-service:
+      path: /sample/**
+      service-id: micro-provider-sample
+hystrix:
+  propagate:
+    request-attribute:
+      enabled: true
+  command:
+    default:
+      execution:
+        #timeout:
+          #enabled: false
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon:
+  eager-load:
+    enabled: true
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+  OkToRetryOnAllOperations: false
+  ConnectTimeout: 60000
+  ReadTimeout: 60000

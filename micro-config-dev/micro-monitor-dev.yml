@@ -1,0 +1,12 @@
+spring:
+  boot:
+    admin:
+      monitor:
+        period: 60000
+      discovery:
+        enabled: true
+      turbine:
+        clusters: default
+        location: turbine
+      routes:
+        endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,heapdump,loggers,auditevents,hystrix.stream,activiti
