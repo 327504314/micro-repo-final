@@ -32,10 +32,10 @@ ribbon:
   ReadTimeout: 60000
 security:
   basic:
-    enabled: true
-  user:
-    name: admin
-    password: admin
+    enabled: false
+  #user:
+    #name: admin
+    #password: admin
 management:
   security:
     enabled: false
