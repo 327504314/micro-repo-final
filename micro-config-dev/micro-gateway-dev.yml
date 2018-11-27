@@ -9,21 +9,26 @@ zuul:
     sample-service:
       path: /sample/**
       service-id: micro-provider-sample
+      ribbon:
+        eager-load:
+          enabled: true
+        MaxAutoRetries: 1
+        MaxAutoRetriesNextServer: 2
+        OkToRetryOnAllOperations: false
+        ConnectTimeout: 60000
+        ReadTimeout: 60000
+        MaxTotalHttpConnections: 500
+        MaxConnectionsPerHost: 100
 hystrix:
   propagate:
     request-attribute:
       enabled: true
   command:
-    default:
+    sample-service:
       execution:
-        #timeout:
-          #enabled: false
         isolation:
           thread:
             timeoutInMilliseconds: 60000
-ribbon:
-  SocketTimeout: 60000
-  ReadTimeout: 60000
 security:
   basic:
     enabled: false
