@@ -48,3 +48,9 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 20000
+spring:
+  redis:
+    host: 172.16.16.157
+    password: bdgroup
+    port: 6379
+    timeout: 0
