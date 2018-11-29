@@ -1,3 +1,4 @@
 micro:
   security:
     oauth2:
+      tokenStore:"jwt"
