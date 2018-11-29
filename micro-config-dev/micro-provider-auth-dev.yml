@@ -1,4 +1,22 @@
+security:
+  oauth2:
+    client:
+      clientId: micro-client-uac
+      clientSecret: microClientSecret
+      access-token-uri: http://172.16.16.169:7979/uac/oauth/token
+      user-authorization-uri: http://172.16.16.169:7979/uac/oauth/authorize
+    resource:
+      id: micro-resource-uac
+      filter-order: 3
 micro:
+  oauth2:
+    jwtSigningKey: micro-iflytek
+    client:
+      id: ${security.oauth2.resource.id}
+      accessTokenUrl: ${security.oauth2.client.access-token-uri}
+      clientId: ${security.oauth2.client.clientId}
+      clientSecret: ${security.oauth2.client.clientSecret}
+      clientAuthenticationScheme: header
   security:
     oauth2:
       tokenStore:"jwt"
