@@ -1,5 +1,6 @@
 security:
   oauth2:
+    jwtSigningKey: micro-iflytek
     client:
       clientId: micro-client-uac
       clientSecret: microClientSecret
