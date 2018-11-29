@@ -1,3 +1,5 @@
+micro:
+  enableSqlLogInterceptor:false
 feign:
   hystrix:
     enabled: true
