@@ -2,7 +2,7 @@ security:
   oauth2:
     resource:
       id: micro-resource-uap
-      user-info-uri: http://172.16.16.169:7979/uaa/user
+      user-info-uri: http://172.16.16.169:7979/uap/user
       prefer-token-info: false
 micro:
   enableSqlLogInterceptor:false
