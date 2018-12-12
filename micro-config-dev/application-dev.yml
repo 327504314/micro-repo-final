@@ -1,14 +1,9 @@
 security:
   oauth2:
-    jwtSigningKey: micro-iflytek
-    client:
-      clientId: micro-client-uac
-      clientSecret: microClientSecret
-      access-token-uri: http://172.16.16.169:7979/uac/oauth/token
-      user-authorization-uri: http://172.16.16.169:7979/uac/oauth/authorize
     resource:
-      id: micro-resource-uac
-      filter-order: 3
+      id: micro-resource-uap
+      user-info-uri: http://172.16.16.169:7979/uaa/user
+      prefer-token-info: false
 micro:
   enableSqlLogInterceptor:false
   oauth2:
