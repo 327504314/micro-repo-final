@@ -14,7 +14,7 @@ zuul:
   #add-host-header: true
   routes:
     sample2-service:
-      path: /sample2/**
+      path: /api/sample2/**
       service-id: micro-provider-sample2
       ribbon:
         eager-load:
@@ -27,7 +27,7 @@ zuul:
         MaxTotalHttpConnections: 500
         MaxConnectionsPerHost: 100
     sample-service:
-      path: /sample/**
+      path: /api/sample/**
       service-id: micro-provider-sample
       ribbon:
         eager-load:
