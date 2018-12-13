@@ -1,8 +1,8 @@
 uap:
   rest:
-    server:172.16.23.12
-    port:8888
-    authenUserUrl:/rest/validate/loginByLoginNamePassWord/
+    server: 172.16.23.12
+    port: 8888
+    authenUserUrl: /rest/validate/loginByLoginNamePassWord/
 micro:
   security:
     token:
