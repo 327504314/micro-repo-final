@@ -1,3 +1,10 @@
+micro:
+  security:
+    token:
+      expiration-time: 10 # 分钟 1440
+      refresh-exp-time: 30 # 分钟 2880
+      issuer: ifytek
+      signing-key: iflytek_bdgroup
 zuul:
   host:
     socket-timeout-millis: 60000
