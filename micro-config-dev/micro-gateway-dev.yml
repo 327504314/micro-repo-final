@@ -3,6 +3,7 @@ uap:
     server: 172.16.23.12
     port: 8888
     authenUserUrl: /rest/validate/loginByLoginNamePassWord/
+    selectUserInfoUrl:/rest/user/get/info/
 micro:
   security:
     token:
