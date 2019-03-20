@@ -11,6 +11,13 @@ micro:
       refresh-exp-time: 30 # 分钟 2880
       issuer: ifytek
       signing-key: iflytek_bdgroup
+# use zuul routes generate swagger resources
+swagger:
+  butler:
+    api-docs-path: /xxx/v2/api-docs
+    swagger-version: 1.0
+    auto-generate-from-zuul-routes: true
+    generate-routes: sample-service,sample2-service
 zuul:
   host:
     socket-timeout-millis: 60000
