@@ -7,9 +7,10 @@ uap:
 # use zuul routes generate swagger resources
 swagger:
   butler:
-    api-docs-path: /v2/api-docs
+    api-docs-path: v2/api-docs
     swagger-version: 1.0
     auto-generate-from-zuul-routes: true
+    generate-routes: sample-service,sample2-service
 micro:
   security:
     token:
