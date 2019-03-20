@@ -4,13 +4,6 @@ uap:
     port: 8020
     authenUserUrl: /rest/validate/loginByLoginNamePassWord/
     selectUserInfoUrl: /rest/user/get/info/
-# use zuul routes generate swagger resources
-swagger:
-  butler:
-    api-docs-path: v2/api-docs
-    swagger-version: 1.0
-    auto-generate-from-zuul-routes: true
-    generate-routes: sample-service,sample2-service
 micro:
   security:
     token:
