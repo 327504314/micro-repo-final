@@ -15,7 +15,7 @@ micro:
 swagger:
   butler:
     api-docs-path: v2/api-docs
-    swagger-version: 2.1
+    swagger-version: 2.0
     auto-generate-from-zuul-routes: true
     generate-routes: sample-service,sample2-service
 zuul:
