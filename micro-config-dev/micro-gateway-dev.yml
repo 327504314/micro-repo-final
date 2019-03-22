@@ -1,7 +1,7 @@
 uap:
   rest:
     server: 172.31.46.27
-    port: 8020
+    port: 8021
     authenUserUrl: /rest/validate/loginByLoginNamePassWord/
     selectUserInfoUrl: /rest/user/get/info/
 micro:
