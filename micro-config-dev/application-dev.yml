@@ -16,7 +16,7 @@ ribbon:
   OkToRetryOnAllOperations: false
   ConnectTimeout: 60000
   ReadTimeout: 20000
-
+  ServerListRefreshInterval: 5000
 hystrix:
   command:
     default:
@@ -32,3 +32,9 @@ spring:
     password: bdgroup
     port: 6379
     timeout: 0
+eureka:
+  instance: 
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+  client:
+    registryFetchIntervalSeconds: 5
