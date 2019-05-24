@@ -38,3 +38,6 @@ eureka:
     lease-renewal-interval-in-seconds: 5
   client:
     registryFetchIntervalSeconds: 5
+management:
+  security:
+    enabled: false
