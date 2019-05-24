@@ -16,6 +16,11 @@ spring:
         enabled: true
       turbine:
         clusters: default
-        location: turbine
+        location: micro-monitor
       routes:
         endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,heapdump,loggers,auditevents,hystrix.stream,activiti
+
+turbine:
+  app-config: paascloud-gateway #收集监控信息的服务名
+  combine-host-port: true
+  cluster-name-expression: new String('default') #集群名称
