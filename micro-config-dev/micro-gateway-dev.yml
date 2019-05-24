@@ -1,0 +1,92 @@
+uap:
+  rest:
+    server: 172.31.46.27
+    port: 8020
+    authenUserUrl: /rest/validate/loginByLoginNamePassWord/
+    selectUserInfoUrl: /rest/user/get/info/
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+    multipart:
+      enabled: true
+      max-request-size: 50MB
+      max-file-size: 50MB
+micro:
+  security:
+    token:
+      expiration-time: 10 # 分钟 1440
+      refresh-exp-time: 30 # 分钟 2880
+      issuer: ifytek
+      signing-key: iflytek_bdgroup
+# use zuul routes generate swagger resources
+swagger:
+  butler:
+    api-docs-path: v2/api-docs
+    swagger-version: 2.0
+    auto-generate-from-zuul-routes: true
+    generate-routes: sample-service,sample2-service
+zuul:
+  host:
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 120000
+  #forceOriginalQueryStringEncoding: true
+  #add-proxy-headers: true
+  #add-host-header: true
+  routes:
+    sample2-service:
+      path: /api/sample2/**
+      ensitiveHeaders:
+      service-id: micro-provider-sample2
+      ribbon:
+        eager-load:
+          enabled: true
+        MaxAutoRetries: 1
+        MaxAutoRetriesNextServer: 2
+        OkToRetryOnAllOperations: false
+        ConnectTimeout: 60000
+        ReadTimeout: 60000
+        MaxTotalHttpConnections: 500
+        MaxConnectionsPerHost: 100
+    sample-service:
+      path: /api/sample/**
+      service-id: micro-provider-sample
+      ribbon:
+        eager-load:
+          enabled: true
+        MaxAutoRetries: 1
+        MaxAutoRetriesNextServer: 2
+        OkToRetryOnAllOperations: false
+        ConnectTimeout: 60000
+        ReadTimeout: 60000
+        MaxTotalHttpConnections: 500
+        MaxConnectionsPerHost: 100
+hystrix:
+  propagate:
+    request-attribute:
+      enabled: true
+  command:
+    sample-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+security:
+  oauth2:
+    client:
+      clientId: paascloud-client-gateway
+      clientSecret: paascloudClientSecret
+      access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
+      user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
+    resource:
+      user-info-uri: http://paascloud-gateway:7979/uac/user
+      prefer-token-info: false
+      jwt:
+        key-uri: http://paascloud-provider-uac:8000/oauth/token_key
+proxy:
+  auth:
+    routes:
+      uac-route: oauth2
+      mdc-route: oauth2
