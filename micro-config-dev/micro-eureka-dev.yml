@@ -1,5 +1,0 @@
-eureka:
-  server:
-    responseCacheUpdateIntervalMs: 3000
-    responseCacheAutoExpirationInSeconds: 180
-    eviction-interval-timer-in-ms: 3000
