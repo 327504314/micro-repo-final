@@ -1,9 +1,3 @@
-uap:
-  rest:
-    server: 172.31.46.27
-    port: 8020
-    authenUserUrl: /rest/validate/loginByLoginNamePassWord/
-    selectUserInfoUrl: /rest/user/get/info/
 spring:
   http:
     encoding:
